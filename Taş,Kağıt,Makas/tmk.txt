@@ -1,0 +1,11 @@
+Amaç:
+Bu projede, Python programlama dilini kullanarak kullanıcının bilgisayarla oynayabileceği 
+basit bir me=n tabanlı Taş Kağıt Makas oyunu uygulayacaksınız.
+İpuçları:
+- Kullanıcıdan alınan seçenekle ilgili olarak büyük/küçük harf duyarlılığına dikkat edin.
+- Karşılaş7rma yaparken, kazanan ve kaybeden durumları kontrol edin.
+- Eğer kullanıcı oyunu sürdürmek is=yorsa, döngülerle oyunun devamını sağlayabilirsiniz.
+Örnek Çalışma:
+Kullanıcı programı çalış7rdığında, "Taş, Kağıt ya da Makas?" sorusuna örneğin "Kağıt" 
+cevabını verdiğinde, program bilgisayarın seçimini de açıklayarak oyun sonucunu ekrana 
+yazdıracak7r

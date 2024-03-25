@@ -1,0 +1,3 @@
+once sayıların 1 ve 1000 a kadar olduğunu belirt 
+sonra bu sayıların 3 veye 5 beşe bölünüp bölünemediklerini belirt
+sonrada bu sayıları topla
