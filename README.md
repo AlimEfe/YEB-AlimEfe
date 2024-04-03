@@ -519,6 +519,53 @@ Console.WriteLine("1. Sayıyı Giriniz :");
 
 
 
+# Sayı  Tahmin Etme Oyunu 
+
+## Hedefler
+- Koşullu ,fadeler
+- lex,cal scop,ng bel,rlemeyle ,lg,l, daha fazla prat,k
+- Döngüler
+- B,r problem b,ld,r,m, nasıl anal,z ed,l,r
+-Genel Bakış
+Bu ödevde hal6hazırda öğrend6ğ6n6z becer6ler6 kullanarak b6r program
+yazacaksınız. 1 6le 100 arasında (yan6 1 6le 100 dah6l ed6lmel6d6r) rastgele b6r
+sayı üreten b6r sayı tahm6n oyunu yazın. B6r sayı oluşturulduktan sonra
+kullanıcıdan bu sayıyı tahm6n etmes6n6 6stey6n ve doğru sayıyı tahm6n edene
+kadar sormaya devam ed6n. Kullanıcıya tahm6nler6n6n çok yüksek veya çok
+düşük olduğunu söylemek g6b6 6puçları vereceks6n6z.
+Hedeflere Ulaşmak 2ç2n Aşağıdak2 Görevler2 Tamamlayın
+Yen6 b6r proje oluşturun ve bunu Say6Tahm6nOyunu olarak adlandırın
+Programınız şunları yapmalıdır:
+- Tekrarlama döngüsünü kullanın, böylece oyun b6tene kadar oyun devam
+eder.
+- Kullanıcıların tahm6nler6n6n rastgele sayıdan küçük, büyük veya ona eş6t
+olup olmadığını bel6rlemek 6ç6n b6r koşula sah6p olun.
+- Kullanıcıdan 1 6le 100 arasında b6r sayı g6rmes6n6 6stey6n.
+
+````c#
+Random random = new Random();
+int rastgeleSayi = random.Next(1, 101);
+int tahmin = 0;
+
+while (tahmin != rastgeleSayi)
+{
+    Console.WriteLine("Bir sayı tahmin ediniz:");
+    tahmin = Convert.ToInt32(Console.ReadLine());
+
+    if (tahmin > rastgeleSayi)
+    {
+        Console.WriteLine("Daha Küçük Bir Sayı Giriniz");
+    }
+    else if (tahmin < rastgeleSayi)
+    {
+        Console.WriteLine("Daha Büyük Bir Sayı Giriniz");
+    }
+}
+
+Console.WriteLine("Doğru Bildiniz !!!!");
+Console.WriteLine("Oyun Bitti");
+````
+
 
 
 
