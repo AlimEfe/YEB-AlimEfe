@@ -603,7 +603,6 @@ hangi varış noktasının alınacağını ve doğru şehir adı ve fiyatının
 kaydedileceğini belirleyecektiri Fiyatların yer aldığı şehrilerin listesi
 aşağıdaki tabloda gösterilmektedir:
 
-![alt text](image.png)
 
 - Müşteri üç otel türünden herhangi biri için doğru bir tamsayı değeri
 girmezse program, otel türünü Standart Otel'e ve fiyatı da 98,50 ABD Doları'na otomatik olarak sıfırlayacaktır.
