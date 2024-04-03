@@ -516,3 +516,208 @@ Console.WriteLine("1. Sayıyı Giriniz :");
         
     }
 ````
+
+
+
+
+
+
+
+
+
+# Seyahat Acentası
+
+## SEYEHAT UYGULAMASI
+### Hedefler
+- Koşul ,fadeler,yle daha fazla prat,k yapın
+- lex,cal scop,ng bel,rlemeyle ,lg,l, daha fazla prat,k
+- Düz Türkçede problem ,fadeler, nasıl anal,z ed,l,r
+Genel Bakış
+Bir seyahat acentesının müşterilere tatil paketleri rezervasyonu yapması için küçük bir seyahat rezervasyon programı yazın. 
+
+Program, kullanıcıdan uçuşlar için sunulan hedeflerden b.r.n. seçmes.n. ve b.r otel odası
+rezervasyonu yapma seçeneğ.n. .steyecekt.r. Rezervasyon .şlem.n.n
+sonunda program kullanıcıya tüm rezervasyon b.lg.ler.n. sağlayacaktır. Yeni bir proje oluşturun ve adını Seyahat olarak adlandırın.
+
+## Açıklama
+İstanbul’dak. küçük bir seyahat acentesı, İstanbul bölgesindeki müşterilere
+tatil paketler. sunuyor. Seyahat acentes. küçük olduğundan, seçilen yerler
+yalnızca az sayıda yer ve otel sunmaktadır. Seyahat acentesının  müşterileri için uçuş ve otel rezervasyonları yapmasına yardımcı olacak bir program yazın.
+Seyahat acentesı, seyahate çıkmayı planlayan yolcuların sayısını bilmek
+istiyor. Müşteriye seyahat edecek kişi sayısını sorun. Program yalnızca bir
+veya daha fazla yolcunun giriş değerini kabul etmelidir. Yolcu sayısında
+herhangi bir sınırlama yoktur. İstemci sıfır veya daha düşük bir değer girerse
+program değeri bir gezgine sıfırlamalı ve istemciye bir hata bildirmelidir.
+Kullanıcı yolcu sayısını girdikten sonra program , müşterinin gidiş-dönüş
+uçuş rezervasyonu yapması için her varış noktası için bir fiyat (kişi başı) .ile
+birlikte teklif edilen varış noktalarının bir listesin. sunmalıdır. Bir tamsayı
+değeri girerek istemciden bir hedef numara seçmesini isteyini Program
+hangi varış noktasının alınacağını ve doğru şehir adı ve fiyatının
+kaydedileceğini belirleyecektiri Fiyatların yer aldığı şehrilerin listesi
+aşağıdaki tabloda gösterilmektedir:
+
+![alt text](image.png)
+
+- Müşteri üç otel türünden herhangi biri için doğru bir tamsayı değeri
+girmezse program, otel türünü Standart Otel'e ve fiyatı da 98,50 ABD Doları'na otomatik olarak sıfırlayacaktır.
+- Müşteriden birkaç otel odasına girmesini isteyini Giriş sıfır veya daha azsa
+otel odası sayısı bire sıfırlanacaktır.
+- Müşteriden otelde kalacağı gece sayısını girmesini isteyini Giriş sıfır veya daha azsa gece sayısı bir olacaktır.
+- Toplam otel fiyatını otel fiyatı, oda sayısı ve gece sayısı ile hesaplayın.
+- Hem uçuş hem de otel rezervasyonu yapılmışsa program, uçuşların ve
+otelin toplam fiyatını hesaplayacak ve uçuşlar, otel bilgileri ve toplam fiyatı
+.çeren paket ayrıntılarını çıkaracaktır.
+- Uçuşlar yalnızca rezerve edilmişse ve otel seçeneği seçilmemişse, program uçuş güzergahı ayrıntılarını bilgi ve fiyatla birlikte görüntüleyecektir.
+- Uçuşlara rezervasyon yapılmamışsa program, rezervasyon yapılmadığını
+duyuracaktır.
+
+## Uçuşlar ve Otel Rezervasyonu
+````c#
+1. Seyahat acentesine hoş geldiniz. Tatil destinasyonlarınız için seyahat paketleri
+sunuyorsunuz.
+2. [Giriş İletişim Kutusu] Kaç kişi seyahat edecek? 4
+3. Uçuş rezervasyonu yapmak için destinasyonlardan birini seçin: 1 - Chicago (200 $), 2 - Los
+Angeles (360 $), 3 - Miami (320 $), 4 - Orlando (310 $), 5 - Seattle (330 $)
+4. [Giriş İletişim Kutusu] Hedef numarayı girin: 3
+5. [Giriş İletişim Kutusu] Paketinize oteli dahil etmek ister misiniz (E/H)? e
+6. Ne tür bir otele rezervasyon yaptırmak istersiniz? 1 - Motel (49,99 $), 2 - Standart Otel
+(98,50 $), 3 - Lüks Otel (199,75 $)
+7. [Giriş İletişim Kutusu] Otel numarasını girin: 2
+8. [Giriş İletişim Kutusu] Otel odası sayısını girin: 1
+9. [Giriş İletişim Kutusu] Otelde kalınacak gece sayısını girin: 3
+10. Uçak ve otel rezervasyonları yapıldı.
+11. 4 gezgin için Miami'ye toplam uçuş fiyatı $1280.0
+12. Standart Otel'de 3 gecelik 1 oda için toplam otel fiyatı $295.5
+13. Uçak ve otel toplam paket fiyatı 1575,5$'dır.
+````
+
+## Yalnızca Uçuş Rezervasyonu
+
+````c#
+1. Seyahat acentesine hoş geldiniz. Tatil destinasyonlarınız için seyahat paketleri sunuyorsunuz.
+2. [Giriş İletişim Kutusu] Kaç kişi seyahat edecek? 3
+3. Uçuş rezervasyonu yapmak için destinasyonlardan birini seçin: 1 - Chicago (200 $), 2 - Los
+Angeles (360 $), 3 - Miami (320 $), 4 - Orlando (310 $), 5 - Seattle (330 $)
+4. [Giriş İletişim Kutusu] Hedef numarayı girin: 5
+5. [Giriş İletişim Kutusu] Paketinize oteli dahil etmek ister misiniz (E/H)? N
+6. Uçuş rezervasyonu yapıldı.
+7. 3 gezgin için Seattle'a toplam uçuş fiyatı $990.0
+8.
+````
+
+## Rezervasyon Yok
+
+````c#
+1. Seyahat acentesine hoş geldiniz. Tatil destinasyonlarınız için seyahat paketleri sunuyorsunuz.
+2. [Giriş İletişim Kutusu] Kaç kişi seyahat edecek? 1
+3. Uçuş rezervasyonu yapmak için destinasyonlardan birini seçin: 1 - Chicago (200 $), 2 - Los
+Angeles (360 $), 3 - Miami (320 $), 4 - Orlando (310 $), 5 - Seattle (330 $)
+4. [Giriş İletişim Kutusu] Hedef numarasını girin: 6
+5. Rezervasyon yapılmadı. Lütfen tekrar gelin!
+6.
+````
+
+## Hatalı ve Otomatik Sıfırlamalı Rezervasyon
+
+````c#
+1. Seyahat acentesine hoş geldiniz. Tatil destinasyonlarınız için seyahat paketleri
+sunuyorsunuz.
+2. [Giriş İletişim Kutusu] Kaç kişi seyahat edecek? 0
+3. Hata: Yolcu sayısı 1'e sıfırlandı. 0 girdiniz
+4. Uçuş rezervasyonu yapmak için destinasyonlardan birini seçin: 1 - Chicago (200 $), 2 - Los
+Angeles (360 $), 3 - Miami (320 $), 4 - Orlando (310 $), 5 - Seattle (330 $)
+5. [Giriş İletişim Kutusu] Hedef numarayı girin: 1
+6. [Giriş İletişim Kutusu] Paketinize oteli dahil etmek ister misiniz (E/H)? e
+7. Ne tür bir otele rezervasyon yaptırmak istersiniz? 1 - Motel (49,99 $), 2 - Standart Otel
+(98,50 $), 3 - Lüks Otel (199,75 $)
+8. [Giriş İletişim Kutusu] Otel numarasını girin: 4
+9. Hata: Otel türü (2) Standart Otel'e atandı. 4 girdiniz
+10. [Giriş İletişim Kutusu] Otel odası sayısını girin: 0
+11. Hata: Otel odası sayısı 1'e sıfırlandı. 0 girdiniz
+12. [Giriş İletişim Kutusu] Otelde kalınacak gece sayısını girin: -1
+13. Hata: Gece sayısı 1'e sıfırlandı. -1 girdiniz
+14. Uçak ve otel rezervasyonları yapıldı.
+15. 1 gezgin(ler) için Chicago'ya toplam uçuş fiyatı: $200.0
+16. Standart Otel'de 1 oda (lar) için 1 gecelik toplam otel fiyatı $98,5
+17. Uçak ve otel toplam paket fiyatı 298,5$
+18.
+````
+
+````c#
+Console.WriteLine("Seyahat Acentesine Hoş Geldiniz");
+
+Console.Write("Kaç Kişi Seyahat Edeceksiniz: ");
+int kisi = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Uçuş Rezervasyonu Yapmak İçin Destinasyonlardan Birini Seçiniz:");
+Console.WriteLine("1. Chicago (200$)    2. Los Angeles (360$)    3. Miami (320$)     4. Orlando (310$)    5. Seattle (330$)");
+
+int secim = Convert.ToInt32(Console.ReadLine());
+int total = 0;
+
+if (secim == 1)
+{
+    total += 200;
+}
+
+else if  (secim == 2)
+{
+    total += 360;
+}
+
+else if (secim == 3)
+{
+    total += 320;
+}
+
+else if (secim == 4)
+{
+    total += 310;
+}
+
+//-------------------otel kısmı-----------------------------
+Console.WriteLine("Pakete Oteli Eklemek İstermisiniz? (e/h)");
+string otel = Console.ReadLine();
+
+
+
+if (otel == "e" || otel == "E")
+{
+
+    Console.WriteLine("1. Motel (50$), 2. Standart Otel (99$), 3. Lüküs Otel (200$)");
+    int otelNumarası = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Otel odası sayısını girin:");
+    int odaSayısı = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Otel kalınacak gece sayısını girin:");
+    int geceSayısı = Convert.ToInt32(Console.ReadLine());
+
+
+    if (otelNumarası == 1)
+    {
+        total += 50;
+    }
+
+    else if (otelNumarası == 2)
+    {
+        total += 99;
+    }
+
+    else if (otelNumarası == 3)
+    {
+        total += 200;
+    }
+
+
+    int odenecektutar = (odaSayısı * total * geceSayısı + kisi * total);
+        Console.WriteLine("Uçuş ve Otel Kayıtlarınız Oluşturuldu.");
+        Console.WriteLine($"Ödenecek Tutar. {odenecektutar}$");
+}
+int cıkıstoplam = (total * kisi);
+
+if (otel == "h" || otel == "H")
+{
+    Console.WriteLine($"Ödenecek Tutar {cıkıstoplam}$");
+}
+````
