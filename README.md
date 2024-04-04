@@ -1,4 +1,241 @@
 # YEB-AlimEfe
+
+## Yamanevler Enderun Bilişim Sınava Hazırlık
+
+# Kim Milyoner Olmak İster
+
+## Amaç
+
+Bu uygulamada günümüzde popüler olan Kim Milyoner Olmak İster yarışmasının kodunu yazdım ve bu yarışmanın kod kısmını gösterdim.
+
+````python
+print("Kim Milyoner Olmak İstere Hoş Geldiniz \n")
+question1 = input("Galatasaray Kaç Tarihinde kurulmuştur ? \n"
+                  "  A) 5 Teşrin 1905"
+                  "  B) 1 Teşrin 1905"
+                  "  C) 3 Mart 1905"
+                  "  D) 3 Ekim 1905 \n"
+                      ) 
+            
+question2 = input("Yamanevler Hangi Yıl Kurulmuştur ? \n"
+                  "  A) 1992 "
+                  "  B) 1981"
+                  "  C) 1984"
+                  "  D) 1923 \n"
+                  )
+
+question3 = input("Beyni Çalınan Bilim İnsan Kimdir ? \n"
+                  "  A) Albert Einstein "
+                  "  B) Thomas Edison"
+                  "  C) Nicola Tesla"
+                  "  D) Stephen Hawking \n"
+                  )
+
+if question1 == "B" and question2 == "a" and question3 == "A":
+    print( "Tebrikler Kazandınız" )
+else:
+    print( "Maalesef Kaybettiniz" ) 
+````
+
+
+# Kütüphane Uygulaması
+
+## Bu Uygulamada
+
+Öncelikle bu tür kütüphane uygulamalarında bir main birde engine adında iki dosya gerekmektedir.
+
+## İşte Main Kodu
+
+````python
+import movie_engine
+
+option_show_list = "1"
+option_add_movie = "2"
+option_delete_movie = "3"
+option_exit = "X" 
+
+
+def show_menu():
+    menu_text = (
+            option_show_list + " = Listele\n" + option_add_movie + " = Ekleme\n" + option_delete_movie + " = Silme\n" + option_exit + " = çıkış\n")
+    return input(menu_text)
+
+
+print("Film kütüphanesi v1.0\n")
+while True:
+    choice = show_menu()
+
+    if choice == option_show_list:
+        movie_engine.show_movies()
+    elif choice == option_add_movie:
+        movie_engine.add_movie()
+    elif choice == option_delete_movie:
+        movie_engine.delete_movie()
+    elif choice == option_exit:
+        break
+
+print("çıkış yapılıyor ...")
+````
+
+Burada def fonksiyonunu kullanarak bir film kütüphanesi Oluşturdum.
+ve bukütüphaneyide movie.engine dosyasında kullanarak bir kütüphane uygulaması yazdım. 
+## İşte engine kodları
+
+````python
+movies = {}
+
+
+def show_movies():
+    for movie_key in movies.keys():
+        name = movies[movie_key]["movie_name"]
+        director = movies[movie_key]["movie_director"]
+        year = movies[movie_key]["movie_year"]
+        print(movie_key, "=> Adı: ", name, " Yönetmeni: ", director, " Yılı: ", year)
+
+
+def add_movie():
+    name = input("Filmin adını girin\n")
+    director = input("Filmin yçnetmenini girin\n")
+    year = input("Filmin yılını girin\n")
+    key = len(movies.items()) + 1
+    movies[key] = {"movie_name": name, "movie_director": director, "movie_year": year}
+
+
+def delete_movie():
+    movie_key = int(input("Hangi filmi silmek istiyorsunuz\n"))
+    movies.pop(movie_key)
+````
+
+
+
+# Taş , Kağıt , Makas Uygulaması
+
+## Bu uygulamada
+
+Bu uygulamada karşıda bir bilgisayar ile taş kağıt makas oynamaya yarayan bir python kodu yazdım.
+
+````python
+import random 
+while True:
+ 
+ oyuncu = input("ne seçmek istersiniz(taş , kağıt,makas ) ")
+ 
+ random1 = ["taş","kağıt","makas"]
+ 
+ random2 = random.choice(random1)
+ 
+ print(random2)
+
+ if oyuncu == "taş" and random2 == "taş" or oyuncu == "kağıt" and random2 == "kağıt" or oyuncu == "makas" and random2 == "makas":
+  print("berabere") 
+
+ elif oyuncu == "taş" and random2  == "makas" or oyuncu == "makas" and random2 == "kağıt" or oyuncu == "kağıt" and random2 == "taş":
+  print("tebrikler kazanmayı başardınız")
+ 
+ else:
+  print("maalesef kaybettiniz ")
+  break
+
+````
+
+# Yemek.com
+
+## Bu uygulamada
+
+Sizden önce bütçenizi isteyen sonrada size menüyü sunan satın aldığınız ürünün fiyatına görede bütçe fiyatınızı azaltan bir python kodu  
+
+````python
+ürün_listesi = {"çorba":25 , "pilav" :50 , "ayran" :5}
+
+sepet = {}
+
+bütçe = int(input("bütçenizi girin\n"))
+
+while bütçe > 0:
+    for isim, fiyat in ürün_listesi.items():
+        print(isim,"ürünün fiyatı = ", fiyat)
+
+    seçilen_ürün = input("ürünü seçin\n")
+
+    if seçilen_ürün == "q":
+        break
+
+    seçilen_ürün_fiyat = ürün_listesi[seçilen_ürün]
+
+    if seçilen_ürün_fiyat > bütçe:
+        print ("ürün fiyatı yüksek")
+
+        continue
+
+    if seçilen_ürün in sepet.keys():
+
+        sepet[seçilen_ürün] += 1
+
+    else:
+
+        sepet[seçilen_ürün] = 1
+
+        bütçe -= seçilen_ürün_fiyat
+
+        print("kalan bütçeniz = ", bütçe)
+
+        for isim,miktar in sepet.items():
+
+            print(miktar, "adet", isim)
+
+
+            print("alışveriş tamamlandı")
+
+            print("kalan bütçeniz = ", bütçe)
+
+        for isim,miktar in sepet.items():
+
+            print(miktar,'adet',isim)
+````
+# Zar Uygulaması
+
+## Bu uygulamada 
+
+Sizden 1'den 6'ya kadar sayı alan ve aynı bir zar gibi tamamiyle sizin şansınıza kalmış olan rastgele bir sayı veren python programı.
+
+````python
+import random
+
+def zar_at():
+    kaç_atış = int(input("Kaç Atış İstiyorsun: "))
+    zarın_yüzeyi = [1, 2, 3, 4, 5, 6]
+
+    for _ in range(kaç_atış):
+        atış = random.choice(zarın_yüzeyi)
+        print("Zar atıldı, sonuç:", atış)
+
+zar_at()
+````
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 csharp_-dev_2
 #Alim Efe
 
@@ -522,25 +759,25 @@ Console.WriteLine("1. Sayıyı Giriniz :");
 # Sayı  Tahmin Etme Oyunu 
 
 ## Hedefler
-- Koşullu ,fadeler
-- lex,cal scop,ng bel,rlemeyle ,lg,l, daha fazla prat,k
+- Koşullu ifadeler
+- lex,cal scoiing belirlemeyle ilgili daha fazla pratik
 - Döngüler
-- B,r problem b,ld,r,m, nasıl anal,z ed,l,r
+- Bir problem bildirimi nasıl analiz edilir
 -Genel Bakış
-Bu ödevde hal6hazırda öğrend6ğ6n6z becer6ler6 kullanarak b6r program
-yazacaksınız. 1 6le 100 arasında (yan6 1 6le 100 dah6l ed6lmel6d6r) rastgele b6r
-sayı üreten b6r sayı tahm6n oyunu yazın. B6r sayı oluşturulduktan sonra
-kullanıcıdan bu sayıyı tahm6n etmes6n6 6stey6n ve doğru sayıyı tahm6n edene
-kadar sormaya devam ed6n. Kullanıcıya tahm6nler6n6n çok yüksek veya çok
-düşük olduğunu söylemek g6b6 6puçları vereceks6n6z.
-Hedeflere Ulaşmak 2ç2n Aşağıdak2 Görevler2 Tamamlayın
-Yen6 b6r proje oluşturun ve bunu Say6Tahm6nOyunu olarak adlandırın
+Bu ödevde halihazırda öğrendiğiniz becerileri kullanarak bir program
+yazacaksınız. 1 ile 100 arasında (yani 1 ile 100 dahil edilmelidir) rastgele b6r
+sayı üreten bir sayı tahmin oyunu yazın. B6r sayı oluşturulduktan sonra
+kullanıcıdan bu sayıyı tahmin etmesini isteyin ve doğru sayıyı tahmin edene
+kadar sormaya devam edin. Kullanıcıya tahminlerinin çok yüksek veya çok
+düşük olduğunu söylemek gibi ipuçları vereceksiniz.
+Hedeflere Ulaşmak için Aşağıdaki Görevleri Tamamlayın
+Yeni bir proje oluşturun ve bunu SayıTahminOyunu olarak adlandırın
 Programınız şunları yapmalıdır:
-- Tekrarlama döngüsünü kullanın, böylece oyun b6tene kadar oyun devam
+- Tekrarlama döngüsünü kullanın, böylece oyun bitene kadar oyun devam
 eder.
-- Kullanıcıların tahm6nler6n6n rastgele sayıdan küçük, büyük veya ona eş6t
-olup olmadığını bel6rlemek 6ç6n b6r koşula sah6p olun.
-- Kullanıcıdan 1 6le 100 arasında b6r sayı g6rmes6n6 6stey6n.
+- Kullanıcıların tahminlerinin rastgele sayıdan küçük, büyük veya ona eşit
+olup olmadığını belirlemek için bir koşula sahip olun.
+- Kullanıcıdan 1 ile 100 arasında bir sayı girmesini isteyn.
 
 ````c#
 Random random = new Random();
@@ -576,15 +813,15 @@ Console.WriteLine("Oyun Bitti");
 
 ## SEYEHAT UYGULAMASI
 ### Hedefler
-- Koşul ,fadeler,yle daha fazla prat,k yapın
-- lex,cal scop,ng bel,rlemeyle ,lg,l, daha fazla prat,k
-- Düz Türkçede problem ,fadeler, nasıl anal,z ed,l,r
+- Koşul ifadeleriyle daha fazla pratik yapın
+- lexical scoping belirlemeyle ilgili daha fazla pratik
+- Düz Türkçede problem ifadeleri nasıl analiz edilir
 Genel Bakış
 Bir seyahat acentesının müşterilere tatil paketleri rezervasyonu yapması için küçük bir seyahat rezervasyon programı yazın. 
 
-Program, kullanıcıdan uçuşlar için sunulan hedeflerden b.r.n. seçmes.n. ve b.r otel odası
-rezervasyonu yapma seçeneğ.n. .steyecekt.r. Rezervasyon .şlem.n.n
-sonunda program kullanıcıya tüm rezervasyon b.lg.ler.n. sağlayacaktır. Yeni bir proje oluşturun ve adını Seyahat olarak adlandırın.
+Program, kullanıcıdan uçuşlar için sunulan hedeflerden birini seçmesini ve bir otel odası
+rezervasyonu yapma seçeneğini isteyecektir. Rezervasyon işleminin
+sonunda program kullanıcıya tüm rezervasyon bilgilerini sağlayacaktır. Yeni bir proje oluşturun ve adını Seyahat olarak adlandırın.
 
 ## Açıklama
 İstanbul’dak. küçük bir seyahat acentesı, İstanbul bölgesindeki müşterilere
