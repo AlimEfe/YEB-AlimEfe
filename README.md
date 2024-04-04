@@ -220,8 +220,8 @@ zar_at()
 
 
 
-csharp_-dev_2
-#Alim Efe
+# csharp_-dev_2
+# Alim Efe
 
 # Ödev 1
 Kullanıcıdan iki sayı ve bir işlem (+, -, x, /) isteyen ve ardından işlemi hesaplayıp sonucunu izleyen bir C# programı yazıyorsunuz. Eğer işlem sembolü önceki sembollerden farklıysa, "Tanınmayan karakter" metnni gösteriminiz.
