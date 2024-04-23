@@ -455,9 +455,9 @@ minimum sayı
         }
         Console.WriteLine("girdiğiniz sayıların en büyük sayı:"+max);
         Console.WriteLine("girdiğiniz sayıların en küçük sayı:"+min);
-    ````
-# Ödev 9
+````
 
+# Ödev 9
 ````c#
 C# dilinde bir sayı (x) ve bir miktar (y) isteyen bir program yazın. Bu sayıyı mitarın (y) katılaşana kadar devam eder.
 
